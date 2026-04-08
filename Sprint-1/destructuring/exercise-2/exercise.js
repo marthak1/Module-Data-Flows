@@ -70,10 +70,20 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
-function gryffindors(hogwartsArray){
-  let houseOfGryffindor = hogwartsArray.filter( (item) => item.house === "Gryffindor");
-   houseOfGryffindor.forEach( ({firstName, lastName}) => {
-console.log(`${firstName} ${lastName}`);
-   })
+function gryffindors(hogwartsArray) {
+  let houseOfGryffindor = hogwartsArray.filter(
+    (item) => item.house === "Gryffindor"
+  );
+  houseOfGryffindor.forEach(({ firstName, lastName }) => {
+    console.log(`${firstName} ${lastName}`);
+  });
 }
 gryffindors(hogwarts);
+
+function teachersWithPets(hogwartsArray) {
+  let namesOfTeachers = hogwartsArray.filter((item) => item.pet !== null);
+  namesOfTeachers.forEach(({ firstName, lastName }) => {
+    console.log(`${firstName} ${lastName}`);
+  });
+}
+teachersWithPets(hogwarts);
