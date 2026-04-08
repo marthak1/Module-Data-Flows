@@ -81,7 +81,7 @@ function gryffindors(hogwartsArray) {
 gryffindors(hogwarts);
 
 function teachersWithPets(hogwartsArray) {
-  let namesOfTeachers = hogwartsArray.filter((item) => item.pet !== null);
+  let namesOfTeachers = hogwartsArray.filter((item) => item.pet !== null && item.occupation === "Teacher");
   namesOfTeachers.forEach(({ firstName, lastName }) => {
     console.log(`${firstName} ${lastName}`);
   });
