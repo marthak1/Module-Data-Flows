@@ -70,3 +70,10 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+function gryffindors(hogwartsArray){
+  let houseOfGryffindor = hogwartsArray.filter( (item) => item.house === "Gryffindor");
+   houseOfGryffindor.forEach( ({firstName, lastName}) => {
+console.log(`${firstName} ${lastName}`);
+   })
+}
+gryffindors(hogwarts);
