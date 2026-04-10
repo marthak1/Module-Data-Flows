@@ -71,19 +71,19 @@ let hogwarts = [
   },
 ];
 function gryffindors(hogwartsArray) {
-  let houseOfGryffindor = hogwartsArray.filter(
-    (item) => item.house === "Gryffindor"
-  );
-  houseOfGryffindor.forEach(({ firstName, lastName }) => {
-    console.log(`${firstName} ${lastName}`);
+  hogwartsArray.forEach(({ firstName, lastName, house }) => {
+    if (house === "Gryffindor") {
+      console.log(`${firstName} ${lastName}`);
+    }
   });
 }
 gryffindors(hogwarts);
 
 function teachersWithPets(hogwartsArray) {
-  let namesOfTeachers = hogwartsArray.filter((item) => item.pet !== null && item.occupation === "Teacher");
-  namesOfTeachers.forEach(({ firstName, lastName }) => {
-    console.log(`${firstName} ${lastName}`);
+  hogwartsArray.forEach(({ firstName, lastName, pet, occupation }) => {
+    if (pet !== null && occupation === "Teacher") {
+      console.log(`${firstName} ${lastName}`);
+    }
   });
 }
 teachersWithPets(hogwarts);
