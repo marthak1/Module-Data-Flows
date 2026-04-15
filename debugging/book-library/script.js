@@ -81,9 +81,9 @@ function render() {
     wasReadCell.appendChild(changeBut);
     let readStatus = "";
     if (myLibrary[i].check == false) {
-      readStatus = "Yes";
-    } else {
       readStatus = "No";
+    } else {
+      readStatus = "Yes";
     }
     changeBut.innerText = readStatus;
 
@@ -98,7 +98,7 @@ function render() {
     deleteCell.appendChild(delBut);
     delBut.className = "btn btn-warning";
     delBut.innerHTML = "Delete";
-    delBut.addEventListener("clicks", function () {
+    delBut.addEventListener("click", function () {
       alert(`You've deleted title: ${myLibrary[i].title}`);
       myLibrary.splice(i, 1);
       render();
@@ -116,7 +116,7 @@ function render() {
 // ## Bugs to be fixed
 
 // 1. Website loads but doesn't show any books => fixed
-// 2. Error in console when you try to add a book
-// 3. It uses the title name as the author name
-// 4. Delete button is broken
-// 5. When I add a book that I say I've read - it saves the wrong answer
+// 2. Error in console when you try to add a book => fixed
+// 3. It uses the title name as the author name => fixed
+// 4. Delete button is broken =>git 
+// 5. When I add a book that I say I've read - it saves the wrong answer => 
