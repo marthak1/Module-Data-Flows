@@ -15,7 +15,6 @@ function populateStorage() {
     );
     myLibrary.push(book1);
     myLibrary.push(book2);
-    render();
   }
 }
 
@@ -23,6 +22,12 @@ const title = document.getElementById("title");
 const author = document.getElementById("author");
 const pages = document.getElementById("pages");
 const check = document.getElementById("check");
+const submitBtn = document.getElementById("submit-btn");
+
+submitBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  submit();
+});
 
 //check the right input from forms and if its ok -> add the new book (object in array)
 //via Book function and start render function
@@ -36,7 +41,7 @@ function submit() {
     alert("Please fill all fields!");
     return false;
   } else {
-    let book = new Book(title.value, title.value, pages.value, check.checked);
+    let book = new Book(title.value, author.value, pages.value, check.checked);
     myLibrary.push(book);
     render();
   }
@@ -55,7 +60,7 @@ function render() {
   //delete old table
   for (let n = rowsNumber - 1; n > 0; n--){
     table.deleteRow(n);
-  }
+    }
   //insert updated row and cells
   let length = myLibrary.length;
   for (let i = 0; i < length; i++) {
@@ -110,7 +115,7 @@ function render() {
 
 // ## Bugs to be fixed
 
-// 1. Website loads but doesn't show any books
+// 1. Website loads but doesn't show any books => fixed
 // 2. Error in console when you try to add a book
 // 3. It uses the title name as the author name
 // 4. Delete button is broken
