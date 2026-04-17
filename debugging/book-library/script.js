@@ -6,11 +6,11 @@ window.addEventListener("load", function (e) {
 
 function populateStorage() {
   if (myLibrary.length == 0) {
-    let book1 = new Book("Robison Crusoe", "Daniel Defoe", "252", true);
+    let book1 = new Book("Robison Crusoe", "Daniel Defoe", 252, true);
     let book2 = new Book(
       "The Old Man and the Sea",
       "Ernest Hemingway",
-      "127",
+      127,
       true
     );
     myLibrary.push(book1);
@@ -18,13 +18,13 @@ function populateStorage() {
   }
 }
 
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const pages = document.getElementById("pages");
-const check = document.getElementById("check");
-const submitBtn = document.getElementById("submit-btn");
+const titleEl = document.getElementById("title");
+const authorEl = document.getElementById("author");
+const pagesEl = document.getElementById("pages");
+const checkEl = document.getElementById("check");
+const submitBtnEl = document.getElementById("submit-btn");
 
-submitBtn.addEventListener("click", function (event) {
+submitBtnEl.addEventListener("click", function (event) {
   event.preventDefault();
   submit();
 });
@@ -33,15 +33,15 @@ submitBtn.addEventListener("click", function (event) {
 //via Book function and start render function
 function submit() {
   if (
-    title.value == null ||
-    title.value == "" ||
-    pages.value == null ||
-    pages.value == ""
+    titleEl.value == null ||
+    titleEl.value == "" ||
+    pagesEl.value == null ||
+    pagesEl.value == ""
   ) {
     alert("Please fill all fields!");
     return false;
   } else {
-    let book = new Book(title.value, author.value, pages.value, check.checked);
+    let book = new Book(titleEl.value, authorEl.value, pagesEl.value, checkEl.checked);
     myLibrary.push(book);
     render();
   }
