@@ -25,16 +25,16 @@
   <div id="demo" class="collapse">
     <div class="form-group">
       <label for="title">Title:</label>
-      <input type="text" class="form-control" id="title" name="title" required />
+      <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title..." required />
       <label for="author">Author: </label>
-      <input type="text" class="form-control" id="author" name="author" required />
+      <input type="text" class="form-control" id="author" name="author" placeholder="Enter author's name..." required />
       <label for="pages">Pages:</label>
-      <input type="number" class="form-control" id="pages" name="pages" required />
+      <input type="number" class="form-control" id="pages" name="pages"  min ="1" placeholder="Enter number of pages..." />
       <label class="form-check-label">
         <input type="checkbox" class="form-check-input" id="check" value="" />Read
       </label>
       <input type="submit" value="Submit" class="btn btn-primary" id="submit-btn" />
-    </div>
+    </div>  
   </div>
 
   <table class="table" id="display">
