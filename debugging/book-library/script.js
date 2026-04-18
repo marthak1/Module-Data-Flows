@@ -33,10 +33,9 @@ submitBtnEl.addEventListener("click", function (event) {
 //via Book function and start render function
 function submit() {
   if (
-    titleEl.value == null ||
-    titleEl.value == "" ||
-    pagesEl.value == null ||
-    pagesEl.value == ""
+    !titleEl.value || 
+    !authorEl.value || 
+    !pagesEl.value
   ) {
     alert("Please fill all fields!");
     return false;
