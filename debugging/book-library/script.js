@@ -32,18 +32,32 @@ submitBtnEl.addEventListener("click", function (event) {
 //check the right input from forms and if its ok -> add the new book (object in array)
 //via Book function and start render function
 function submit() {
-  if (
-    !titleEl.value || 
-    !authorEl.value || 
-    !pagesEl.value
-  ) {
+  const title = titleEl.value.trim();
+  const author = authorEl.value.trim();
+  const pagesRaw = pagesEl.value.trim();
+
+  if (!title || !author || !pagesRaw) {
     alert("Please fill all fields!");
-    return false;
-  } else {
-    const book = new Book(titleEl.value, authorEl.value, pagesEl.value, checkEl.checked);
-    myLibrary.push(book);
-    render();
+    return;
   }
+
+  const pages = Number(pagesRaw);
+
+  if (!Number.isInteger(pages) || pages <= 0) {
+    alert("Pages must be a positive number");
+    return;
+  }
+
+  const book = new Book(title, author, pages, checkEl.checked);
+
+  myLibrary.push(book);
+  render();
+
+  // clear form
+  titleEl.value = "";
+  authorEl.value = "";
+  pagesEl.value = "";
+  checkEl.checked = false;
 }
 
 function Book(title, author, pages, check) {
