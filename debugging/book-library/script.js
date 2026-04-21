@@ -1,4 +1,9 @@
-let myLibrary = [];
+const titleEl = document.getElementById("title");
+const authorEl = document.getElementById("author");
+const pagesEl = document.getElementById("pages");
+const checkEl = document.getElementById("check");
+const submitBtnEl = document.getElementById("submit-btn");
+const myLibrary = [];
 window.addEventListener("load", function (e) {
   populateStorage();
   render();
@@ -17,12 +22,6 @@ function populateStorage() {
     myLibrary.push(book2);
   }
 }
-
-const titleEl = document.getElementById("title");
-const authorEl = document.getElementById("author");
-const pagesEl = document.getElementById("pages");
-const checkEl = document.getElementById("check");
-const submitBtnEl = document.getElementById("submit-btn");
 
 submitBtnEl.addEventListener("click", function (event) {
   event.preventDefault();
