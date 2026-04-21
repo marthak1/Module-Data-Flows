@@ -94,7 +94,6 @@ function render() {
 
     //add and wait for action for read/unread button
     const changeBut = document.createElement("button");
-    changeBut.id = i;
     changeBut.className = "btn btn-success";
     wasReadCell.appendChild(changeBut);
     changeBut.innerText = myLibrary[i].check ? "Yes" : "No";
@@ -105,7 +104,6 @@ function render() {
 
     //add delete button to every row and render again
     const delBut = document.createElement("button");
-    delBut.id = i + 5;
     deleteCell.appendChild(delBut);
     delBut.className = "btn btn-warning";
     delBut.innerHTML = "Delete";
