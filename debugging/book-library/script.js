@@ -75,10 +75,9 @@ function showMessage(text) {
 }
 function render() {
   const table = document.getElementById("display");
-  //delete old table
-  while (table.rows.length > 1) {
-    table.deleteRow(1);
-  }
+  const tableBody = document.querySelector("tbody");
+  tableBody.innerHTML = ""; // clears all rows
+}
   //insert updated row and cells
   let length = myLibrary.length;
   for (let i = 0; i < length; i++) {
