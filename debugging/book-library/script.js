@@ -77,7 +77,7 @@ function render() {
   const table = document.getElementById("display");
   const tableBody = document.querySelector("tbody");
   tableBody.innerHTML = ""; // clears all rows
-}
+
   //insert updated row and cells
   let length = myLibrary.length;
   for (let i = 0; i < length; i++) {
